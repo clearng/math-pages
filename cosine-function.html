@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>余弦函数的性质与图像 | 数学（基础模块上册）</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #f8fafc;
+        }
+        .math-container {
+            background-color: #f1f5f9;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+        .property-card {
+            transition: all 0.3s ease;
+        }
+        .property-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .cosine-graph {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- 头部标题 -->
+        <div class="text-center mb-12">
+            <div class="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-4">
+                国家十四五职业教育国家规划教材
+            </div>
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">数学（基础模块 上册）</h1>
+            <div class="w-24 h-1 bg-blue-500 mx-auto mb-6"></div>
+            <h2 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-4">第五章 三角函数</h2>
+            <h3 class="text-xl md:text-2xl font-medium text-blue-600">5.3 余弦函数的性质与图像</h3>
+        </div>
+
+        <!-- 定义与概念 -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden mb-10">
+            <div class="bg-blue-600 px-6 py-4">
+                <h2 class="text-xl font-semibold text-white flex items-center">
+                    <i class="fas fa-book-open mr-3"></i>
+                    一、余弦函数的定义与概念
+                </h2>
+            </div>
+            <div class="p-6">
+                <div class="mb-8">
+                    <h3 class="text-lg font-medium text-gray-800 mb-4 flex items-center">
+                        <span class="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-3">1</span>
+                        定义
+                    </h3>
+                    <p class="text-gray-700 mb-4">在平面直角坐标系中，设任意角 $$ \alpha $$ 的终边与单位圆交于点 $$ P(x, y) $$，则余弦函数定义为：</p>
+                    <div class="math-container">
+                        $$ \cos \alpha = x $$
+                    </div>
+                    <p class="text-gray-700">其中，$$ x $$ 为单位圆上点 $$ P $$ 的横坐标。</p>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="text-lg font-medium text-gray-800 mb-4 flex items-center">
+                        <span class="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-3">2</span>
+                        定义域与值域
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="property-card bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-medium text-blue-800 mb-2">定义域</h4>
+                            <p class="text-gray-700">全体实数 $$ \mathbb{R} $$</p>
+                        </div>
+                        <div class="property-card bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-medium text-blue-800 mb-2">值域</h4>
+                            <p class="text-gray-700">$$ [-1, 1] $$，即 $$ \cos \alpha \in [-1, 1] $$</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-medium text-gray-800 mb-4 flex items-center">
+                        <span class="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-3">3</span>
+                        象限符号规律
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="property-card bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-medium text-green-800 mb-2">第一、四象限</h4>
+                            <p class="text-gray-700">余弦值为正（$$ x > 0 $$）</p>
+                        </div>
+                        <div class="property-card bg-red-50 p-4 rounded-lg">
+                            <h4 class="font-medium text-red-800 mb-2">第二、三象限</h4>
+                            <p class="text-gray-700">余弦值为负（$$ x < 0 $$）</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 图像与性质 -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden mb-10">
+            <div class="bg-blue-600 px-6 py-4">
+                <h2 class="text-xl font-semibold text-white flex items-center">
+                    <i class="fas fa-chart-line mr-3"></i>
+                    二、余弦函数的图像与性质
+                </h2>
+            </div>
+            <div class="p-6">
+                <div class="mb-8">
+                    <h3 class="text-lg font-medium text-gray-800 mb-4 flex items-center">
+                        <span class="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-3">1</span>
+                        图像绘制方法
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-medium text-gray-800 mb-2">五点作图法</h4>
+                            <p class="text-gray-700 mb-4">选取关键点 $$ 0, \frac{\pi}{2}, \pi, \frac{3\pi}{2}, 2\pi $$，对应的余弦值依次为 $$ 1, 0, -1, 0, 1 $$，连接这些点形成平滑曲线。</p>
+                            <div class="math-container">
+                                
+$$
+ \begin{array}{|c|c|c|c|c|c|}
+                                \hline
+                                x & 0 & \frac{\pi}{2} & \pi & \frac{3\pi}{2} & 2\pi \\
+                                \hline
+                                \cos x & 1 & 0 & -1 & 0 & 1 \\
+                                \hline
+                                \end{array} 
+$$
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-800 mb-2">周期性</h4>
+                            <p class="text-gray-700">余弦函数是周期函数，最小正周期为 $$ 2\pi $$，即：</p>
+                            <div class="math-container">
+                                $$ \cos(\alpha + 2k\pi) = \cos \alpha \quad (k \in \mathbb{Z}) $$
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-medium text-gray-800 mb-4 flex items-center">
+                        <span class="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-3">2</span>
+                        核心性质
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                        <div class="property-card bg-purple-50 p-4 rounded-lg">
+                            <h4 class="font-medium text-purple-800 mb-2">奇偶性</h4>
+                            <p class="text-gray-700">余弦函数是偶函数，满足：</p>
+                            <div class="math-container mt-2">
+                                $$ \cos(-\alpha) = \cos \alpha $$
+                            </div>
+                            <p class="text-gray-700 text-sm mt-2">（图像关于 y 轴对称）</p>
+                        </div>
+                        <div class="property-card bg-yellow-50 p-4 rounded-lg">
+                            <h4 class="font-medium text-yellow-800 mb-2">单调性</h4>
+                            <ul class="text-gray-700 space-y-1">
+                                <li>在区间 $$ [0, \pi] $$ 上单调递减</li>
+                                <li>在区间 $$ [\pi, 2\pi] $$ 上单调递增</li>
+                            </ul>
+                        </div>
+                        <div class="property-card bg-pink-50 p-4 rounded-lg">
+                            <h4 class="font-medium text-pink-800 mb-2">最值</h4>
+                            <ul class="text-gray-700 space-y-1">
+                                <li>最大值 $$ 1 $$ 出现在 $$ \alpha = 2k\pi $$（$$ k \in \mathbb{Z} $$）</li>
+                                <li>最小值 $$ -1 $$ 出现在 $$ \alpha = (2k+1)\pi $$（$$ k \in \mathbb{Z} $$）</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 余弦函数图像示意图 -->
+                    <div class="cosine-graph mt-6">
+                        <h4 class="font-medium text-gray-800 mb-4 text-center">余弦函数 $$ y = \cos x $$ 图像</h4>
+                        <div class="relative h-64 md:h-80 bg-gray-100 rounded-lg flex items-center justify-center">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-full h-px bg-gray-300"></div>
+                            </div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="h-full w-px bg-gray-300"></div>
+                            </div>
+                            <div class="relative w-full h-full">
+                                <!-- 绘制余弦曲线 -->
+                                <svg class="w-full h-full" viewBox="0 0 100 50" preserveAspectRatio="none">
+                                    <path d="M0,25 Q25,50 50,25 T100,25" stroke="#3B82F6" stroke-width="2" fill="none" />
+                                    <!-- 坐标轴 -->
+                                    <line x1="0" y1="25" x2="100" y2="25" stroke="#6B7280" stroke-width="1" />
+                                    <line x1="50" y1="0" x2="50" y2="50" stroke="#6B7280" stroke-width="1" />
+                                    <!-- 标记点 -->
+                                    <circle cx="0" cy="25" r="1.5" fill="#3B82F6" />
+                                    <circle cx="25" cy="0" r="1.5" fill="#3B82F6" />
+                                    <circle cx="50" cy="25" r="1.5" fill="#3B82F6" />
+                                    <circle cx="75" cy="50" r="1.5" fill="#3B82F6" />
+                                    <circle cx="100" cy="25" r="1.5" fill="#3B82F6" />
+                                    <!-- 标签 -->
+                                    <text x="0" y="35" font-size="3" fill="#6B7280">0</text>
+                                    <text x="25" y="10" font-size="3" fill="#6B7280">π/2</text>
+                                    <text x="50" y="35" font-size="3" fill="#6B7280">π</text>
+                                    <text x="75" y="60" font-size="3" fill="#6B7280">3π/2</text>
+                                    <text x="100" y="35" font-size="3" fill="#6B7280">2π</text>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 应用部分 -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden mb-10">
+            <div class="bg-blue-600 px-6 py-4">
+                <h2 class="text-xl font-semibold text-white flex items-center">
+                    <i class="fas fa-lightbulb mr-3"></i>
+                    三、余弦函数的应用
+                </h2>
+            </div>
+            <div class="p-6">
+                <div class="mb-8">
+                    <h3 class="text-lg font-medium text-gray-800 mb-4 flex items-center">
+                        <span class="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-3">1</span>
+                        实际问题建模
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="property-card bg-indigo-50 p-4 rounded-lg">
+                            <h4 class="font-medium text-indigo-800 mb-2">周期性现象</h4>
+                            <p class="text-gray-700">如机械振动、声波、电流波动等周期性变化规律，可用一般式表达：</p>
+                            <div class="math-container mt-2">
+                                $$ y = A\cos(\omega x + \phi) $$
+                            </div>
+                        </div>
+                        <div class="property-card bg-teal-50 p-4 rounded-lg">
+                            <h4 class="font-medium text-teal-800 mb-2">工程计算</h4>
+                            <p class="text-gray-700">例如桥梁振动分析、交流电电压计算等实际工程问题中的周期性变化分析。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-medium text-gray-800 mb-4 flex items-center">
+                        <span class="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center mr-3">2</span>
+                        与其他知识的联系
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="property-card bg-orange-50 p-4 rounded-lg">
+                            <h4 class="font-medium text-orange-800 mb-2">三角函数关系</h4>
+                            <p class="text-gray-700">通过诱导公式简化运算：</p>
+                            <div class="math-container mt-2">
+                                
+$$
+ \begin{align*}
+                                \cos(\pi - \alpha) &= -\cos \alpha \\
+                                \cos(\alpha + \pi) &= -\cos \alpha
+                                \end{align*} 
+$$
+                            </div>
+                        </div>
+                        <div class="property-card bg-cyan-50 p-4 rounded-lg">
+                            <h4 class="font-medium text-cyan-800 mb-2">单位圆与直角三角形的结合</h4>
+                            <p class="text-gray-700">利用单位圆上的坐标值与直角三角形边长的关系，解决几何问题。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 典型例题 -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden mb-10">
+            <div class="bg-blue-600 px-6 py-4">
+                <h2 class="text-xl font-semibold text-white flex items-center">
+                    <i class="fas fa-pen-fancy mr-3"></i>
+                    四、典型例题与解题技巧
+                </h2>
+            </div>
+            <div class="p-6">
+                <div class="mb-8">
+                    <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg mb-6">
+                        <h3 class="text-lg font-medium text-blue-800 mb-2">例题1：求余弦值</h3>
+                        <p class="text-gray-700 mb-2">求 $$ \cos \frac{5\pi}{3} $$。</p>
+                        <div class="bg-white p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">解析：</h4>
+                            <p class="text-gray-700">$$ \frac{5\pi}{3} $$ 位于第四象限，对应单位圆上的点坐标为 $$ (\frac{1}{2}, -\frac{\sqrt{3}}{2}) $$，故：</p>
+                            <div class="math-container mt-2">
+                                $$ \cos \frac{5\pi}{3} = \frac{1}{2} $$
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg">
+                        <h3 class="text-lg font-medium text-green-800 mb-2">例题2：判断单调性</h3>
+                        <p class="text-gray-700 mb-2">函数 $$ y = \cos x $$ 在区间 $$ [\frac{\pi}{2}, \frac{3\pi}{2}] $$ 上的单调性。</p>
+                        <div class="bg-white p-3 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">解析：</h4>
+                            <p class="text-gray-700">该区间包含 $$ \pi $$，由单调性规律可知：</p>
+                            <ul class="text-gray-700 list-disc pl-5 mt-2 space-y-1">
+                                <li>在 $$ [\frac{\pi}{2}, \pi] $$ 上递减</li>
+                                <li>在 $$ [\pi, \frac{3\pi}{2}] $$ 上递增</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 学习提示 -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden mb-10">
+            <div class="bg-blue-600 px-6 py-4">
+                <h2 class="text-xl font-semibold text-white flex items-center">
+                    <i class="fas fa-graduation-cap mr-3"></i>
+                    五、学习提示
+                </h2>
+            </div>
+            <div class="p-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-yellow-50 p-4 rounded-lg">
+                        <h3 class="text-lg font-medium text-yellow-800 mb-3 flex items-center">
+                            <i class="fas fa-book mr-2"></i>
+                            利用配套资源
+                        </h3>
+                        <p class="text-gray-700">教材配套的《数学学习指导与练习》包含针对余弦函数的专项训练题，建议结合使用。</p>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <h3 class="text-lg font-medium text-purple-800 mb-3 flex items-center">
+                            <i class="fas fa-laptop-code mr-2"></i>
+                            信息化工具辅助
+                        </h3>
+                        <p class="text-gray-700">可使用计算器或数学软件（如 GeoGebra）动态观察余弦函数图像的变化规律。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 引用信息 -->
+        <div class="bg-gray-100 p-4 rounded-lg text-sm text-gray-600">
+            <p><span class="font-medium">引用教材章节：</span>高等教育出版社《数学（基础模块 上册）》修订版第五章"三角函数"。</p>
+        </div>
+
+        <!-- 页脚 -->
+        <div class="mt-12 pt-6 border-t border-gray-200 text-center text-sm text-gray-500">
+            <p>网页由问小白生成，仅供参考</p>
+            <p>最后更新时间为2025-05-18，星期日</p>
+            <p class="mt-2">问小白网址：wenxiaobai.com</p>
+        </div>
+    </div>
+
+    <script>
+        // 平滑滚动效果
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
